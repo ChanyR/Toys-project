@@ -35,7 +35,7 @@ router.get("/search", async (req, res) => {
     }
     catch (err) {
         console.log(err);
-        res.status(500).json({ msg: "There error, try again later", err })
+        res.status(500).json({ msg: "There error to search, try again later", err })
     }
 })
 
@@ -72,7 +72,7 @@ router.post("/", auth, async (req, res) => {
     }
     catch (err) {
         console.log(err);
-        res.status(500).json({ msg: "There error, try again later", err })
+        res.status(500).json({ msg: "There error to add, try again later", err })
     }
 })
 
@@ -91,11 +91,14 @@ router.put("/:editId", auth, async (req, res) => {
         else {
             data = await ToyModel.updateOne({ _id: editId, user_id: req.tokenData._id }, req.body)
         }
-        res.json(data);
+        if (data.modifiedCount == 0) {
+            res.json({ msg: "not valid id or you are not allowed to edit. nothing was edited" })
+        }
+        else res.json(data);
     }
     catch (err) {
         console.log(err);
-        res.status(500).json({ msg: "There error, try again later", err })
+        res.status(500).json({ msg: "There error to edit, try again later", err })
     }
 })
 
@@ -110,11 +113,14 @@ router.delete("/:delId", auth, async (req, res) => {
         else {
             data = await ToyModel.deleteOne({ _id: delId, user_id: req.tokenData._id })
         }
-        res.json(data);
+        if (data.deletedCount == 0) {
+            res.json({ msg: "not valid id or you are not allowed to erase. nothing was erased" })
+        }
+        else res.json(data);
     }
     catch (err) {
         console.log(err);
-        res.status(500).json({ msg: "There error, try again later", err })
+        res.status(500).json({ msg: "There error to delete, try again later", err })
     }
 })
 

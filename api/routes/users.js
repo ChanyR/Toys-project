@@ -104,18 +104,22 @@ router.put("/:editId", auth, async (req, res) => {
     try {
         let editId = req.params.editId;
         let data;
+        req.body.password = await bcrypt.hash(req.body.password, 10);
         console.log(req.body);
         if (req.tokenData.role == "admin") {
             data = await UserModel.updateOne({ _id: editId }, req.body)
         }
+        else if (editId == req.tokenData._id) {
+            data = await UserModel.updateOne({ _id: editId }, req.body);
+        }
         else {
-            data = await UserModel.updateOne({ _id: editId, user_id: req.tokenData._id }, req.body)
+            data = [{ status: "failed", msg: "You are not allowed to edit" }]
         }
         res.json(data);
     }
     catch (err) {
         console.log(err);
-        res.status(500).json({ msg: "There error, try again later", err })
+        res.status(500).json({ msg: "There error to edit user, try again later", err })
     }
 })
 
@@ -128,14 +132,16 @@ router.delete("/:delId", auth, async (req, res) => {
             data = await UserModel.deleteOne({ _id: delId })
         }
         else {
-            data = await UserModel.deleteOne({ _id: delId, user_id: req.tokenData._id })
+            data = [{ status: "failed", msg: "You are not admin" }]
         }
         res.json(data);
     }
     catch (err) {
         console.log(err);
-        res.status(500).json({ msg: "There error, try again later", err })
+        res.status(500).json({ msg: "There error to delete, try again later", err })
     }
 });
+
+
 
 module.exports = router;
