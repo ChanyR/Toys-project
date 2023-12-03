@@ -11,6 +11,10 @@ main .topPic {
   background-size: cover;
 }
 
+main .color-text{
+  color: rgb(91, 83, 160);
+}
+
   .bigDomain{
     font-size: 1.8em;
     font-family: "Pattaya", sans-serif;
