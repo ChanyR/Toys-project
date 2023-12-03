@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 
     try {
         let data = await UserModel
-            .find({})
+            .find({},{name:1})
             .limit(perPage)
             .skip((page - 1) * perPage)
             .sort({ [sort]: reverse })
