@@ -24,7 +24,6 @@
 </head>
 
 <body>
-    <!-- header start -->
     <header>
         <nav class="navbar navbar-expand-lg bg-light py-2 shadow">
             <div class="container-fluid">
@@ -47,18 +46,15 @@
             </div>
         </nav>
     </header>
-    <!-- header end -->
 
-    <!-- main start -->
     <main class="container-fluid pb-4">
-
         <!-- table 1 -->
         <div class="container">
             <div class="py-5">
                 <div class="shadow d-flex align-text-top justify-content-center topPic text-white "> </div>
             </div>
             <div id="user_id" class="text-center">
-                <h2 class="display-4 text-center pb-3 text-info fw-bolder">
+                <h2 class="display-4 text-center pb-3 text-info fw-bolder link-warning">
                     User Routes
                 </h2>
             </div>
@@ -69,7 +65,7 @@
             the ability to delete and modify users and their toys. </p>
         <div class="container table-responsive shadow p-2 ">
             <table class="table table-bordered table-striped ">
-                <h4 class="mb-3 text-center bigDomain fw-bolder color-text">
+                <h4 class="mb-3 text-center bigDomain fw-bolder color-text-p">
                     Domain:
                     <span id="Domain">https://toys-api-lq3b.onrender.com/</span>
                     <button class="btn mx-2 copyBtn text-black" id="domainbtn"><i class="bi bi-files"></i></button>
@@ -163,12 +159,10 @@
         <!-- table 2 -->
         <div class="container">
             <div id="toy_id" class="text-center m-3">
-                <h2 class="display-4 text-center py-2 text-info fw-bolder">
+                <h2 class="display-4 text-center py-2 text-info fw-bolder link-warning">
                     Toys Routes
                 </h2>
             </div>
-
-
         </div>
 
         <div class="container">
@@ -186,7 +180,7 @@
 
         <div class="container table-responsive shadow py-2">
             <table class="table table-bordered table-striped mb-3">
-                <h4 class="mb-3 text-center bigDomain text-color fw-bold">
+                <h4 class="mb-3 text-center bigDomain color-text-p fw-bold">
                     Domain:
                     <span id="Domain">https://toys-api-lq3b.onrender.com/</span>
                     <button class="btn mx-2 copyBtn" id="domainbtn2"><i class="bi bi-files"></i></button>
@@ -208,7 +202,15 @@
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="https://toys-api-lq3b.onrender.com/toys/search?s=game" target="_blank">/toys/search?s=game</a></td>
+                        <td><a href="https://toys-api-lq3b.onrender.com/toys/single/656c3fba5bb7cd6933f30e26"
+                                target="_blank">/toys/{id}</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get a toy by id.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="https://toys-api-lq3b.onrender.com/toys/search?s=game"
+                                target="_blank">/toys/search?s=game</a></td>
                         <td class="text-center">none</td>
                         <td>search for a toy by searching follwing name or info after the "s=", it will present 10
                             results per page.
@@ -216,24 +218,19 @@
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a
-                                href="https://toys-api-lq3b.onrender.com/toys/prices?min=20&max=100" target="_blank">/toys/prices?min=20&max=100</a>
+                        <td><a href="https://toys-api-lq3b.onrender.com/toys/prices?min=20&max=100"
+                                target="_blank">/toys/prices?min=20&max=100</a>
                         </td>
                         <td class="text-center">none</td>
                         <td>Get a list of the toys by min & max , it will present 10 results per page.</td>
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="https://toys-api-lq3b.onrender.com/toys/category/game" target="_blank">/toys/category/:catName</a></td>
+                        <td><a href="https://toys-api-lq3b.onrender.com/toys/category/game"
+                                target="_blank">/toys/category/:catName</a></td>
                         <td class="text-center">none</td>
                         <td>Get a list of all the toys in toys <strong>category</strong>, it will present 10 results per
                             page.</td>
-                    </tr>
-                    <tr>
-                        <td>GET</td>
-                        <td><a href="https://toys-api-lq3b.onrender.com/toys/single/656c3fba5bb7cd6933f30e26" target="_blank">/toys/{id}</a></td>
-                        <td class="text-center">none</td>
-                        <td>Get a toy by id.</td>
                     </tr>
                     <tr>
                         <td>POST</td>
@@ -247,9 +244,7 @@
     "category": "Board Games",
     "img_url": "https://example.com/carcassonne.jpg",
     "price": 39.99
-}
-                                
-                              
+}                 
    </pre>
                         </td>
                         <td>Add a new toy to the data base, <strong>You need a token for this query ,</strong><br>
@@ -285,9 +280,7 @@
         </div>
 
     </main>
-    <!-- main end -->
 
-    <!-- footer start -->
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 border-top">
         <div class="col-md-4 d-flex align-items-center ms-4">
             <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
@@ -299,12 +292,11 @@
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">
-            <li class="ms-3"><a class="text-muted" href="https://github.com/ChanyR/Toys-project.git"><i
+            <li class="ms-3"><a class="text-muted" href="https://github.com/ChanyR/Toys-project.git" target="_blank"><i
                         class="bi bi-github"></i>
                 </a></li>
         </ul>
     </footer>
-    <!-- footer end -->
 
     <!-- js connect -->
     <script src="index.js"></script>

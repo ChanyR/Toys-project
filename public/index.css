@@ -1,6 +1,7 @@
-main{
+main {
   background-color: whitesmoke;
 }
+
 main .topPic {
   min-height: 300px;
   border-radius: 32px;
@@ -11,17 +12,17 @@ main .topPic {
   background-size: cover;
 }
 
-main .color-text{
+.color-text-p {
   color: rgb(91, 83, 160);
 }
 
-  .bigDomain{
-    font-size: 1.8em;
-    font-family: "Pattaya", sans-serif;
+.bigDomain {
+  font-size: 1.8em;
+  font-family: "Pattaya", sans-serif;
 
-  }
-  
-nav .myScale{
+}
+
+nav .myScale {
   display: inline-block;
   letter-spacing: 1px;
   font-family: sans-serif;
@@ -31,23 +32,23 @@ nav .myScale{
   transition: 1000ms;
 }
 
-nav .myScale:hover{
+nav .myScale:hover {
   transform: scale(1.2);
   letter-spacing: 2px;
   color: black;
 }
 
-.text1{
+.text1 {
   font-family: 'Gloria Hallelujah', cursive;
   font-family: 'Playfair Display', serif;
   font-size: 1.3em;
 }
 
-.copyBtn{
+.copyBtn {
   transition: 1000ms;
 }
 
-.copyBtn:hover{
+.copyBtn:hover {
   transform: scale(1.2);
   color: blue;
 }
